@@ -6,8 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"/>
 </head>
 <script src="index.js"></script>
 <body>
@@ -36,35 +35,35 @@
 <div class="container d-flex justify-content-center p-4 bg-white col-5 border border-2 border-primary-subtle rounded-4">
     <form class="col-10" method="POST" action="newUser.php" name = "formRegister">
         <div class="mb-3" id="divFirstName">
-            <label for="first-name" class="form-label">First name</label>
-            <input type="text" class="form-control" id="first-name" maxlength="20" autofocus/>
+            <label for="fName" class="form-label">First name</label>
+            <input type="text" class="form-control" id="fName" name="fName" maxlength="20" autofocus required/>
         </div>
         <div class="mb-3" id="divLastName">
-            <label for="last-name" class="form-label">Last name</label>
-            <input type="text" class="form-control" id="last-name" maxlength="50"/>
+            <label for="lName" class="form-label">Last name</label>
+            <input type="text" class="form-control" id="lName" name="lName" maxlength="50" required/>
         </div>
         <div class="mb-3" id="divEmail">
             <label for="Email" class="form-label" >Email address</label>
-            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" maxlength="50"/>
+            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" maxlength="50" required/>
             <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
         </div>
         <div class="mb-3" id="divPass1">
-            <label for="InputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="InputPassword1" maxlength="50"/>
+            <label for="pass1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="pass1" name="pass1" maxlength="50" required/>
         </div>
         <div class="mb-3" id="divPass2">
-            <label for="InputPassword2" class="form-label">Confirm password</label>
-            <input type="password" class="form-control" id="InputPassword2" maxlength="50"/>
+            <label for="pass2" class="form-label">Confirm password</label>
+            <input type="password" class="form-control" id="pass2" maxlength="50" required/>
         </div>
         <div class="mb-3" id="divBornDate">
-            <label for="borndate" class="form-label">Born date</label>
-            <input type="date" class="form-control" id="borndate"/>
+            <label for="bornDate" class="form-label">Born date</label>
+            <input type="date" class="form-control" id="bornDate" name="bornDate"/>
           </div>
         <div class="mb-3 form-check" id="check">
-            <input type="checkbox" class="form-check-input" id="Check1"/>
-            <label class="form-check-label" for="Check1">Check me for continue</label>
+            <input type="checkbox" class="form-check-input" id="Check1" name="check" value="true"/>
+            <label class="form-check-label" for="Check1">Check me for continue</label><br/>
         </div>
-        <button type="button" class="btn btn-primary" onClick="verify()">Submit</button>
+        <button type="button" class="btn btn-primary" onclick=verify()>Submit</button>
     </form>
 </div>
 
@@ -82,5 +81,4 @@
     crossorigin="anonymous"></script>
 
 </body>
-
 </html>

@@ -1,18 +1,12 @@
-var fName = document.getElementById('first-name');
-var lName = document.getElementById('last-name');
-var email = document.getElementById('email');
-var pass = document.getElementById("InputPassword1");
-
-var dFName = document.getElementById('divFirstName');
-var dLName = document.getElementById('divLastName');
-var dEmail = document.getElementById('DivEmail');
-var dPass = document.getElementById('divPass1');
+function get(id){ return document.getElementById(id);}
 
 function verify() {
     let p = verifyPass();
     let d = verifyDate();
     let c = verifyCheck();
-    if (p && d && c){
+    let e = verifyEmpty();
+    console.log(p,d,c,e);
+    if (p && d && c && e) {
         return formRegister.submit();
     }
 }
@@ -26,79 +20,89 @@ function addLabel(div, mensage, id) {
     div.append(label);
 }
 
-function verifyEmpty(){
-    var inputs = [fName,lName,email,pass];
-    var divs = [dFName,dLName,dEmail,dPass];
+function verifyEmpty() {
+    let final = true;
+    let ids = ['fName','lName','email','pass1'];
+    let x = ids.length;
 
-    let x = inputs.length
-    for(let i = 0; i<x; i++){
-        if (inputs[i].value == ""){
-            //addLabel(divs[i], "This text box can't be empty.",)
+    let inputs = [];
+    for (i=0;i<x;i++){
+        inputs.push(get(ids[i]));
+    }
+
+    let dFName = get('divFirstName');
+    let dLName = get('divLastName');
+    let dEmail = get('divEmail');
+    let dPass = get('divPass1');
+    let divs = [dFName, dLName, dEmail, dPass]; 
+    
+    let labels = [];
+
+    for (let i=0; i<x;i++){
+        labels.push('Lalbel'+ids[i]);
+    }
+    for (let i = 0; i < x; i++) {
+        if (inputs[i].value == "") {
+            final = false;
+            if (count(labels[i])){
+                addLabel(divs[i], "This text box can't be empty.", labels[i]);}
         }
     }
-    
+    return final;
 }
 
 function verifyPass() {
     let id = 'labelPass';
     if (count(id)) {
-        const pass1 = pass.value;
-        const pass2 = document.getElementById('InputPassword2').value;
+        const pass1 = get('pass1').value;
+        const pass2 = get('pass2').value;
 
         if (!(pass1 === pass2)) {
-            const div = document.getElementById("divPass2");
+            const div = get("divPass2");
             let mensage = 'The passwords must to be equal.';
             addLabel(div, mensage, id);
             return false;
         }
-        else{return true;}
+        else { return true; }
     }
 }
 
 function verifyDate() {
+    let final = true;
     let id = 'labelDate';
     if (count(id)) {
         const today = new Date();
-        const val = document.getElementById('borndate').value;
+        const val = get('bornDate').value;
         date = new Date(val);
         let x = isNaN(date.getDay()) /*verifying if has a date*/
         if ((date - today) > 0 || x) {
+            final = false;
             let mensage = 'The date is invalid';
-            const div = document.getElementById('divBornDate');
+            const div = get('divBornDate');
             addLabel(div, mensage, id);
-            return false;
         }
-        else{return true;}
     }
+    return final;
 }
 
 function verifyCheck() {
+    let final = true;
     let id = 'labelCheck';
     if (count(id)) {
         const check = document.querySelector('#Check1:checked');
         if (check == null) {
-            const div = document.getElementById('check');
+            final = false;
+            const div = get('check');
             let mensage = 'This item has to be checked.';
             addLabel(div, mensage, id);
-            return false;
         }
-        else{return true;}
     }
+    return final;
 }
 
 function count(id) {
     /*This function verifyes if a mensage alreary exist in the screen*/
-    if (id == "labelCheck") {
-        if (!document.getElementById(id)) { return true; }
-        else {return false;}
-    }
-    else if (id == "labelPass") {
-        if (!document.getElementById(id)) { return true; }
-        else {return false;}
-    }
-    else if (id == "labelDate") {
-        if (!document.getElementById(id)) { return true; }
-        else {return false;}
-    }
+    if (!get(id)) { return true; }
+    else { return false; }
 
 }
