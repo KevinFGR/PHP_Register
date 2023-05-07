@@ -32,6 +32,7 @@
 </nav>
 <div class="container ml-4">
 <h2>Configurating Database ... </h2>
+
 <?php
 
 $serv = 'localhost';
@@ -51,7 +52,7 @@ $TabelaSQL = "CREATE TABLE users (id int PRIMARY KEY AUTO_INCREMENT,
                                  email varchar(100),
                                  born_date date,
                                  pass varchar (100),
-                                 chekt boolean);";
+                                 checked boolean);";
                                  
 $create = mysqli_query($connection, $TabelaSQL);
 

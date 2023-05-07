@@ -1,15 +1,37 @@
+<?php 
+//<safe moment>
+session_set_cookie_params(['httponly'=>true]); //avoid getting confidential information using JS.
+session_start();
+session_regenerate_id(true); //update the session
+//</safe moment>
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Register</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"/>
 </head>
 <script src="index.js"></script>
 <body>
+
+<?php
+/*
+//verifying if there's already a session
+function home(){
+    $vEmail = isset($_SESSION['email']);
+    $vPass = isset($_SESSION['pass']); 
+    if ($vEmail && $vPass){
+        echo '<script type=javascript> window.location.href="home.php";</script>';
+        echo $_SESSION['pass'];
+    }
+}
+*/
+?>
 <nav class="navbar navbar-expand-lg bg-primary">
     <div class="container-fluid">
         <a class="navbar-brand  text-light">Register</a>
@@ -60,7 +82,7 @@
             <input type="date" class="form-control" id="bornDate" name="bornDate"/>
           </div>
         <div class="mb-3 form-check" id="check">
-            <input type="checkbox" class="form-check-input" id="Check1" name="check" value="true"/>
+            <input type="checkbox" class="form-check-input" id="Check1" name="check1" value="true"/>
             <label class="form-check-label" for="Check1">Check me for continue</label><br/>
         </div>
         <button type="button" class="btn btn-primary" onclick=verify()>Submit</button>
@@ -70,8 +92,10 @@
 <footer class="bg-secondary-subtle mt-5 p-4">
     <div class="card" style="width: 18rem;">
         <ul class="list-group list-group-flush">
-          <li class="list-group-item bg-secondary-subtle"><a class="link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="">Access project on GitHub</a></li>
-          <li class="list-group-item bg-secondary-subtle"><a class="link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="github.com/KevinFGR"> Access the page's creator GitHub</a></li>
+          <li class="list-group-item bg-secondary-subtle">
+            <a class="link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="https://github.com/KevinFGR/PHP_and_SQL">Access project on GitHub</a></li>
+          <li class="list-group-item bg-secondary-subtle">
+            <a class="link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="github.com/KevinFGR"> Access the page's creator GitHub</a></li>
         </ul>
       </div>
 </footer>

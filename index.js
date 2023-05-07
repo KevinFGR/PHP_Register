@@ -106,3 +106,9 @@ function count(id) {
     else { return false; }
 
 }
+
+function home(){
+    console.log('home')
+    return window.location.href='home.php';
+    //return document.write('home');
+}
