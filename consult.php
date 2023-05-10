@@ -10,7 +10,7 @@
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous" />
     <link rel="stylesheet" href="consultar.css" />
 </head>
-<body>
+<body style="height:800px;">
 <nav class="navbar navbar-expand-lg bg-primary">
     <div class="container-fluid">
         <a class="navbar-brand  text-light">Registers</a>
@@ -36,15 +36,22 @@
     <h1>This page is being builded</h1>
 </div>
 
-
-<footer class=" bg-secondary-subtle mt-5 p-4">
-    <div class="card" style="width: 18rem;">
+<footer class="bg-secondary-subtle mt-5 p-4">
+    <div class="card col-3">
         <ul class="list-group list-group-flush">
-          <li class="list-group-item bg-secondary-subtle"><a class="link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="">Access project on GitHub</a></li>
-          <li class="list-group-item bg-secondary-subtle"><a class="link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="github.com/KevinFGR"> Access the page's creator GitHub</a></li>
+          <li class="list-group-item bg-secondary-subtle">
+            <a class="link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="https://github.com/KevinFGR/PHP_and_SQL" target="_blank">
+                Access project on GitHub</a></li>
+          <li class="list-group-item bg-secondary-subtle">
+            <a class="link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="https://github.com/KevinFGR" target="_blank">
+                Access the developer's Github page </a></li>
+          <li class="list-group-item bg-secondary-subtle">
+            <a class="link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="https://linkedin.com/in/kevin-felipe-2b4678217" target="_blank">
+                Access the developer's Linkedin page </a></li>
         </ul>
-      </div>
+    </div>
 </footer>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"crossorigin="anonymous"></script>
 </body>
 

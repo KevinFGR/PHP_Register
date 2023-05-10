@@ -1,5 +1,7 @@
 function get(id){ return document.getElementById(id);}
 
+function dbConfig(){ return window.location.href="DatabaseConfig.php"; }
+
 function verify() {
     let p = verifyPass();
     let d = verifyDate();

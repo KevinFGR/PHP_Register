@@ -8,6 +8,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"/>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-primary mb-5">
@@ -18,33 +21,27 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav" style="width:100%;">
 
                 <li class="nav-item">
-                    <a class="nav-link active text-light" href="index.html">Register</a>
+                    <a class="nav-link active text-light" href="index.php">Register</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="consultar.html">See logs</a>
+                    <a class="nav-link text-light" href="consult.php">See logs</a>
                 </li>
             </ul>
+            <button class="btn btn-primary btn-outline-light d-flex justfy-content-end" onclick="dbConfig()">DBConfig</button>
+
         </div>
     </div>
 </nav>
+
 <div class="container ml-4">
 <h2>Configurating Database ... </h2>
 
 <?php
 
-$serv = 'localhost';
-$user = 'root';
-$pass = '';
-$db = 'database';
-
-$connection = mysqli_connect($serv,$user,$pass,$db);
-
-if(!$connection){
-    die('Flaha ao conectar com o banco de dados' . mysqli_connect_error());
-}
+include_once('connection.php');
 
 $TabelaSQL = "CREATE TABLE users (id int PRIMARY KEY AUTO_INCREMENT,
                                  f_name varchar(20),
@@ -57,15 +54,13 @@ $TabelaSQL = "CREATE TABLE users (id int PRIMARY KEY AUTO_INCREMENT,
 $create = mysqli_query($connection, $TabelaSQL);
 
 if ($create == 1){
-    echo "<h3>DataBase successfully cunfigured</h3>";}
+    echo "<h3>DataBase successfully cunfigured</h3>"; }
+else{
+    echo "<h3>Something went wrong. veriry if the DB is already configured.</h3>"; }
 
 mysqli_close($connection);
 ?>
 </div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-    crossorigin="anonymous"></script>
 
 </body>
 </html>
