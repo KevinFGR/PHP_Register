@@ -22,17 +22,17 @@ session_regenerate_id(true); //update the session
     <div class="container-fluid">
         <a class="navbar-brand  text-light">MySite</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav" style="width:100%;">
 
                 <li class="nav-item">
-                    <a class="nav-link active text-light" aria-current="page" href="index.php">Home</a>
+                    <a class="nav-link active text-light" aria-current="page" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active text-light" aria-current="page" href="register.php">Register</a>
+                    <a class="nav-link text-light" href="register.php">Register</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-light" href="consult.php">See logs</a>
@@ -44,6 +44,7 @@ session_regenerate_id(true); //update the session
     </div>
 </nav>
 <br/><br/>
+
 <div class="container p-5 ">
 <h1>PHP_and_SQL </h1>
 <p>Using PHP to interate with a database </p>
@@ -60,8 +61,8 @@ session_regenerate_id(true); //update the session
 <li>Install XAMPP;</li>
 
 <li>In your computer's folder that was created by XAMPP installation. Open the git bash at xampp/htdocs directory and run the following code: <br/>
-    <button type="button" id="btn-git"  class="btn btn-primary m-2" value="git clone https://github.com/KevinFGR/PHP_and_SQL.git"> <!--onclick='copy("btn-git");'-->
-        git clone https://github.com/KevinFGR/PHP_and_SQL.git 
+    <button type="button" id="btn-git"  class="btn btn-primary m-2 col-6 d-flex justify-content-between p-3" value="git clone https://github.com/KevinFGR/PHP_and_SQL.git"> <!--onclick='copy("btn-git");'-->
+        <span>git clone https://github.com/KevinFGR/PHP_and_SQL.git </span>
         <span class="badge text-bg-light"><img src="img/copy.png" id="img1"alt="copy" height="15px"></span>
     </button>
 </li>
@@ -69,14 +70,14 @@ session_regenerate_id(true); //update the session
 <li>Open the XAMPP painel and turn on Apache and MySQL;</li>
 
 <li>Go to PHPMyAdmin URL and create a database called Register_DataBase<br/>
-    <button type="button" id="btn-admim"  class="btn btn-primary m-2" value="localhost/phpmyadmin"> <!--onclick='copy("btn-admim")'-->
-        localhost/phpmyadmin 
+    <button type="button" id="btn-admim"  class="btn btn-primary m-2 col-6 d-flex justify-content-between p-3" value="localhost/phpmyadmin"> <!--onclick='copy("btn-admim")'-->
+        <span>localhost/phpmyadmin </span>
         <span class="badge text-bg-light"><img src="img/copy.png" id="img2"alt="copy" height="15px"></span>
     </button>
 </li>
 <li>Access the index page of the site and press the button DBConfig at the top right side.<br/>
-    <button type="button" id="btn-directory"  class="btn btn-primary m-2" value="localhost/php_and_sql/"> <!--onclick='copy("btn-directory")'-->
-        localhost/php_and_sql/ 
+    <button type="button" id="btn-directory"  class="btn btn-primary m-2 col-6 d-flex justify-content-between p-3" value="localhost/php_and_sql/"> <!--onclick='copy("btn-directory")'-->
+        <span>localhost/php_and_sql/ </span>
         <span class="badge text-bg-light"><img src="img/copy.png" id="img3"alt="copy" height="15px"></span>
     </button>
 </li>
