@@ -1,3 +1,8 @@
+<?php
+include_once('lib/connection.php')
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -43,8 +48,6 @@
 <h2>Configurating Database ... </h2>
 
 <?php
-
-include_once('connection.php');
 
 $TabelaSQL = "CREATE TABLE users (id int PRIMARY KEY AUTO_INCREMENT,
                                  f_name varchar(20),

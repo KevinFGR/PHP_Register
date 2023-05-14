@@ -1,5 +1,6 @@
-# PHP_and_SQL
-Using PHP to interate with a database 
+# PHP_Register
+Using PHP to interate with a database (CRUD)
+
 
 ## Requeriments
 

@@ -4,6 +4,8 @@ session_set_cookie_params(['httponly'=>true]); //avoid getting confidential info
 session_start();
 session_regenerate_id(true); //update the session
 //</safe moment>
+
+include('lib/functions.php');
 ?>
 
 <!DOCTYPE html>
@@ -32,13 +34,15 @@ session_regenerate_id(true); //update the session
                     <a class="nav-link active text-light" aria-current="page" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="register.php">Register</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link text-light" href="consult.php">See logs</a>
                 </li>
             </ul>
-            <button class="btn btn-primary btn-outline-light d-flex justfy-content-end" onclick="dbConfig()">DBConfig</button>
+            <div class="d-flex text-light">
+                <div class="me-3 p-1 icon-link icon-link-hover">
+                    <?php name(); ?>
+                </div>
+                <button class="btn btn-primary btn-outline-light d-flex justfy-content-end" onclick="dbConfig()">DBConfig</button>
+            </div>
         </div>
         
     </div>
@@ -131,24 +135,8 @@ session_regenerate_id(true); //update the session
     </div>
 </footer>
 
-<script type="text/javascript">
 
-//por algum motivo o site não consegue acessar o script index.js
-
-document.getElementById("btn-git").addEventListener("click", () => {copy('btn-git','img1')});
-document.getElementById("btn-admim").addEventListener("click", ()=>{copy('btn-admim','img2')});
-document.getElementById("btn-directory").addEventListener("click",() => {copy('btn-directory','img3')});
-
-function copy(id,img) {
-    let btn = document.getElementById(id);
-    let text = btn.value;
-    navigator.clipboard.writeText(text);
-    let imgId = "#"+img;
-    var image = document.querySelector(imgId);
-    image.setAttribute('src', 'img/check.png');
-}
-
-</script>
+<script src="scripts/index.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"

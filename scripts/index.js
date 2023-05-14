@@ -1,6 +1,7 @@
+
 document.getElementById("btn-git").addEventListener("click", () => {copy('btn-git','img1')});
-document.getElementById("btn-directory").addEventListener("click",() => {copy('btn-directory','img2')});
-document.getElementById("btn-admim").addEventListener("click", ()=>{copy('btn-admim','img3')});
+document.getElementById("btn-admim").addEventListener("click", ()=>{copy('btn-admim','img2')});
+document.getElementById("btn-directory").addEventListener("click", () => {copy('btn-directory','img3')});
 
 function copy(id,img) {
     let btn = document.getElementById(id);

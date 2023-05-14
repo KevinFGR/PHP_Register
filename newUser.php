@@ -1,5 +1,5 @@
 <?php
-
+// adicionar o redirecionamento da página automático para evitar i F5
 
 //<safe moment>
 session_set_cookie_params(['httponly'=>true]); //avoid getting confidential information using JS.
@@ -7,7 +7,7 @@ session_start();
 session_regenerate_id(true); //update the session
 //</safe moment>
 
-include("connection.php");
+include("lib/connection.php");
 
 if ($_POST['fName'] && $_POST['lName'] && $_POST['email'] && $_POST["bornDate"] && $_POST['pass1'] && $_POST['check1']){
     // verifyes if the form was answered correctly to avoid errors
@@ -34,19 +34,19 @@ if ($_POST['fName'] && $_POST['lName'] && $_POST['email'] && $_POST["bornDate"] 
 
 
     if ($validation == true){ 
-        //mysqli_query($connection,$sql);
+        mysqli_query($connection,$sql);
         $_SESSION['email'] = $email;
         $_SESSION['pass'] = $pass;
-        echo 'SESSION on';
+        $_SESSION['name'] = $fName;
+        //echo 'SESSION on';
     } 
     else{
         echo 'not SESSION';
     }
     mysqli_close($connection);
-
-    foreach($_SESSION as $i){
+    /*foreach($_SESSION as $i){
         echo $i;
-    }
+    }*/
 }
 
 
@@ -72,9 +72,9 @@ if ($_POST['fName'] && $_POST['lName'] && $_POST['email'] && $_POST["bornDate"] 
         <h2>Congrats!</h2>
         <p> Now you're register in our data base</p>
         <hr/>
-        <p>Click in the following button to acces the consulting page</p>
-        <a href="consult.php">
-            <button class='btn btn-primary'>Consulting</button>
+        <p>Click in the following button to acces the Home page</p>
+        <a href="index.php">
+            <button class='btn btn-primary'>Home</button>
         </a>
     </div>
 </div>
